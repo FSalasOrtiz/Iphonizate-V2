@@ -26,6 +26,9 @@ const VAR_MAP = {
   text: "--text",
   textDim: "--text-dim",
   textFaint: "--text-faint",
+  primary: "--primary",
+  primaryFg: "--primary-fg",
+  primaryHover: "--primary-hover",
   pink: "--pink",
   pinkDark: "--pink-dark",
   pinkSecondary: "--pink-secondary",
@@ -39,11 +42,15 @@ export function ThemeProvider({ children }) {
   // cualquier parte de la app (incluida la pantalla de login) sin
   // necesidad de envolver cada componente.
   useEffect(() => {
-    const root = document.documentElement.style;
+    const el = document.documentElement;
     Object.entries(VAR_MAP).forEach(([key, cssVar]) => {
-      root.setProperty(cssVar, theme.colors[key]);
+      el.style.setProperty(cssVar, theme.colors[key]);
     });
-    root.setProperty("--pink-soft", `rgba(${hexToRgbTriplet(theme.colors.pink)}, 0.15)`);
+    el.style.setProperty("--pink-soft", `rgba(${hexToRgbTriplet(theme.colors.pink)}, 0.10)`);
+    el.style.setProperty("--primary-soft", `rgba(${hexToRgbTriplet(theme.colors.primary)}, 0.06)`);
+    // El CSS usa [data-theme="oscuro"] para los pocos ajustes que las
+    // variables no cubren (sombras, opacidades de las tintas de color).
+    el.dataset.theme = theme.id;
   }, [theme]);
 
   const setThemeId = (id) => {

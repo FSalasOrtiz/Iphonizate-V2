@@ -49,7 +49,7 @@ export default function Configuracion() {
         </div>
       </Card>
 
-      <Card title="Apariencia" subtitle="Elige el color de acento de toda la app.">
+      <Card title="Apariencia" subtitle="Cambia entre modo claro y oscuro.">
         <div className="theme-grid">
           {themes.map((t) => (
             <button
@@ -58,7 +58,10 @@ export default function Configuracion() {
               onClick={() => setThemeId(t.id)}
               title={t.label}
             >
-              <span className="theme-swatch-dot" style={{ background: `linear-gradient(135deg, ${t.colors.pink}, ${t.colors.pinkSecondary})` }}>
+              <span
+                className="theme-swatch-dot"
+                style={{ background: t.colors.bgElev, color: t.colors.pink }}
+              >
                 {themeId === t.id && <Check size={16} />}
               </span>
               <span className="theme-swatch-label">{t.label}</span>

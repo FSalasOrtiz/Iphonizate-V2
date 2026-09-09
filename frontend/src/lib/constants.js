@@ -50,59 +50,33 @@ export const SESSION_TIMEOUT_OPTIONS = [
   { label: "Nunca", value: 0 },
 ];
 
-export const DEFAULT_THEME_ID = "rosa";
+export const DEFAULT_THEME_ID = "claro";
 
-// Cada tema define TODA la paleta (fondo, superficies, texto y acento),
-// no solo un color de acento — así el cambio se nota en toda la app.
+// V2 adopta el lenguaje visual de shadcn/ui (estilo "new-york", paleta Slate).
+// Acento principal MONOCROMO (--primary: casi negro en claro, casi blanco en
+// oscuro) + azul (--pink*) solo para links y estado activo. Dos variantes:
+// claro (por defecto) y oscuro.
 export const THEMES = [
-  {
-    id: "rosa",
-    label: "Rosa Nocturno",
-    colors: {
-      bg: "#0b0710", bgElev: "#130d1c", surface: "#171021", surface2: "#1d1529",
-      border: "#2b2138", borderSoft: "#221a2e",
-      text: "#f3eef7", textDim: "#a99bb8", textFaint: "#7c6f8c",
-      pink: "#ec1f80", pinkDark: "#c2137f", pinkSecondary: "#a020c0",
-    },
-  },
-  {
-    id: "azul",
-    label: "Azul Medianoche",
-    colors: {
-      bg: "#070b14", bgElev: "#0d1420", surface: "#111a2b", surface2: "#162236",
-      border: "#22314a", borderSoft: "#1a2740",
-      text: "#eef3fb", textDim: "#9fb0c9", textFaint: "#71829c",
-      pink: "#38bdf8", pinkDark: "#0284c7", pinkSecondary: "#0ea5e9",
-    },
-  },
-  {
-    id: "verde",
-    label: "Verde Bosque",
-    colors: {
-      bg: "#070f0c", bgElev: "#0c1712", surface: "#101d17", surface2: "#15271f",
-      border: "#233a2f", borderSoft: "#1b2e25",
-      text: "#eef7f1", textDim: "#9dbdaa", textFaint: "#6f8c7c",
-      pink: "#34d399", pinkDark: "#10b981", pinkSecondary: "#059669",
-    },
-  },
-  {
-    id: "atardecer",
-    label: "Atardecer",
-    colors: {
-      bg: "#140a06", bgElev: "#1d0f08", surface: "#24140c", surface2: "#2e1a10",
-      border: "#452817", borderSoft: "#382012",
-      text: "#fbf1e8", textDim: "#d9b79c", textFaint: "#a37f62",
-      pink: "#f59e0b", pinkDark: "#d97706", pinkSecondary: "#ea580c",
-    },
-  },
   {
     id: "claro",
     label: "Claro",
     colors: {
-      bg: "#f5f4f8", bgElev: "#ffffff", surface: "#ffffff", surface2: "#f0eef5",
-      border: "#e2dfec", borderSoft: "#ebe8f2",
-      text: "#221a2e", textDim: "#5c5470", textFaint: "#8b84a0",
-      pink: "#ec1f80", pinkDark: "#c2137f", pinkSecondary: "#a020c0",
+      bg: "#f8fafc", bgElev: "#ffffff", surface: "#ffffff", surface2: "#f1f5f9",
+      border: "#e2e8f0", borderSoft: "#eef2f6",
+      text: "#020817", textDim: "#475569", textFaint: "#64748b",
+      primary: "#0f172a", primaryFg: "#f8fafc", primaryHover: "#1e293b",
+      pink: "#2563eb", pinkDark: "#1d4ed8", pinkSecondary: "#3b82f6",
+    },
+  },
+  {
+    id: "oscuro",
+    label: "Oscuro",
+    colors: {
+      bg: "#020817", bgElev: "#0b1220", surface: "#0b1220", surface2: "#1e293b",
+      border: "#1e293b", borderSoft: "#172033",
+      text: "#f8fafc", textDim: "#cbd5e1", textFaint: "#94a3b8",
+      primary: "#f8fafc", primaryFg: "#0f172a", primaryHover: "#e2e8f0",
+      pink: "#3b82f6", pinkDark: "#2563eb", pinkSecondary: "#60a5fa",
     },
   },
 ];
