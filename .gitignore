@@ -1,0 +1,17 @@
+# Dependencias
+node_modules/
+
+# Builds
+dist/
+build/
+
+# Variables de entorno (secretos: nunca se suben)
+.env
+.env.local
+.env.*.local
+
+# Editor / SO
+.DS_Store
+.vscode/
+*.log
+npm-debug.log*

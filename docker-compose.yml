@@ -1,0 +1,16 @@
+# Solo para desarrollo local: levanta una base Postgres para que el backend
+# tenga contra qué conectarse sin instalar nada en tu máquina.
+services:
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_DB: iphonizate
+      POSTGRES_USER: iphonizate
+      POSTGRES_PASSWORD: iphonizate
+    ports:
+      - "5432:5432"
+    volumes:
+      - db_data:/var/lib/postgresql/data
+
+volumes:
+  db_data:
