@@ -52,31 +52,32 @@ export const SESSION_TIMEOUT_OPTIONS = [
 
 export const DEFAULT_THEME_ID = "claro";
 
-// V2 adopta el lenguaje visual de shadcn/ui (estilo "new-york", paleta Slate).
-// Acento principal MONOCROMO (--primary: casi negro en claro, casi blanco en
-// oscuro) + azul (--pink*) solo para links y estado activo. Dos variantes:
-// claro (por defecto) y oscuro.
+// V2 adopta el lenguaje de un back-office financiero (Stripe / Mercury):
+// claro y sobrio, orientado a datos (números tabulares, tablas densas),
+// acento morado Stripe (#635bff) solo en acciones y links, y color
+// verde/rojo reservado para éxito/fallo. Claro por defecto + variante oscura.
+// --primary = texto oscuro de referencia; --pink* = el acento morado.
 export const THEMES = [
   {
     id: "claro",
     label: "Claro",
     colors: {
-      bg: "#f8fafc", bgElev: "#ffffff", surface: "#ffffff", surface2: "#f1f5f9",
-      border: "#e2e8f0", borderSoft: "#eef2f6",
-      text: "#020817", textDim: "#475569", textFaint: "#64748b",
-      primary: "#0f172a", primaryFg: "#f8fafc", primaryHover: "#1e293b",
-      pink: "#2563eb", pinkDark: "#1d4ed8", pinkSecondary: "#3b82f6",
+      bg: "#f6f9fc", bgElev: "#ffffff", surface: "#ffffff", surface2: "#f7fafc",
+      border: "#e3e8ee", borderSoft: "#eef1f6",
+      text: "#1a1f36", textDim: "#3c4257", textFaint: "#697386",
+      primary: "#1a1f36", primaryFg: "#ffffff", primaryHover: "#0b0e1c",
+      pink: "#635bff", pinkDark: "#4b45c6", pinkSecondary: "#7a73ff",
     },
   },
   {
     id: "oscuro",
     label: "Oscuro",
     colors: {
-      bg: "#020817", bgElev: "#0b1220", surface: "#0b1220", surface2: "#1e293b",
-      border: "#1e293b", borderSoft: "#172033",
-      text: "#f8fafc", textDim: "#cbd5e1", textFaint: "#94a3b8",
-      primary: "#f8fafc", primaryFg: "#0f172a", primaryHover: "#e2e8f0",
-      pink: "#3b82f6", pinkDark: "#2563eb", pinkSecondary: "#60a5fa",
+      bg: "#0a0e27", bgElev: "#111634", surface: "#111634", surface2: "#1a2044",
+      border: "#2a3157", borderSoft: "#1f2647",
+      text: "#f5f6fb", textDim: "#b3b9d4", textFaint: "#8a91b4",
+      primary: "#f5f6fb", primaryFg: "#0a0e27", primaryHover: "#e2e5f3",
+      pink: "#8f88ff", pinkDark: "#635bff", pinkSecondary: "#a29bff",
     },
   },
 ];
